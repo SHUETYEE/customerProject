@@ -1,5 +1,9 @@
 package com.customer.entity;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.Date;
 import java.io.Serializable;
 
@@ -9,11 +13,13 @@ import java.io.Serializable;
  * @author makejava
  * @since 2019-12-03 10:21:30
  */
+@ApiModel("用户实体类")
 public class Echarts implements Serializable {
     private static final long serialVersionUID = -48024620826259427L;
     
     private Integer id;
-    
+
+    @ApiModelProperty("名字")
     private String name;
     
     private Integer value;

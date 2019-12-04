@@ -2,6 +2,8 @@ package com.customer.controller;
 
 import com.customer.entity.Echarts;
 import com.customer.service.EchartsService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -40,7 +42,7 @@ public class EchartsController {
     }
 
     @GetMapping("findAll")
-    public List<Echarts> findAll() {
+    public List<Echarts> findAll()  {
         return this.echartsService.findAll();
     }
 
@@ -78,6 +80,13 @@ public class EchartsController {
         map.put("list1",list1);
         map.put("list2",list2);
         return map;
+    }
+
+    @RequestMapping
+    @ApiOperation("hello控制类")
+    public String hello(@ApiParam("用户名") @RequestBody String name){
+        System.out.println(name);
+        return "hello";
     }
 
 }
